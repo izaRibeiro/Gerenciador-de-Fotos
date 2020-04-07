@@ -85,10 +85,12 @@ export default {
 
   .lista-fotos {
     list-style: none;
+    margin-left: 100px;
   }
 
   .lista-fotos .lista-fotos-item {
     display: inline-block;
+    margin-left: 10px;
   }
 
   .filtro {
@@ -97,7 +99,8 @@ export default {
     position: relative; 
     align-self: center;
     padding: 12px 20px;
-    margin: 8px 0;
+    margin: 20px;
+    margin-left: 100px;
     border: 1px solid #ccc;
     border-radius: 4px;
     box-sizing: border-box;
@@ -108,6 +111,6 @@ export default {
     margin: 0;
     padding: 0;
     overflow: hidden;
-  }
+ }
 
 </style>

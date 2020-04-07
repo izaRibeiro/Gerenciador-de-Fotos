@@ -1,5 +1,5 @@
 <template>
-    <h2 class="titulo">Cadastro</h2>
+    <h1 class="titulo">Cadastro</h1>
 </template>
 
 <script>
@@ -11,5 +11,5 @@
     .cadastro {
         text-align: center;
     }
-    
+
 </style>
