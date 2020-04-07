@@ -6,13 +6,9 @@
       <li class='lista-fotos-item'
         v-for='foto of fotos' :key='foto.titulo'>
         
-        <div class="painel">
-          <h4 class="painel-titulo"> {{ foto.titulo }} </h4>
-          <div class="painel-conteudo">
-            <img class="imagem-responsiva" :src='foto.url' :alt='foto.titulo'>
-          </div>
-        </div>
-        
+        <meu-painel :titulo='foto.titulo'>
+          <img class="imagem-responsiva" :src='foto.url' :alt='foto.titulo'>
+        </meu-painel>
         
       </li>
     </ul>
@@ -21,7 +17,14 @@
 </template>
 
 <script>
+import Painel from '../src/components/shared/Painel';
+
 export default {
+
+  components: {
+    'meu-painel': Painel
+  },
+
   data(){
     return{
       titulo: 'Alurapic',
@@ -61,25 +64,4 @@ export default {
     display: inline-block;
   }
 
-   .painel {
-    padding: 0 auto;
-    display: inline-block;
-    margin: 5px;
-    width: 200px;
-    height: 100%;
-    vertical-align: top;
-    text-align: center;
-  }
-
-  .painel .painel-titulo {
-    text-align: center;
-    color: rgb(248, 239, 239);
-    background: rgb(190, 72, 159);
-    margin: 0 0 15px 0;
-    padding: 10px;
-  }
-
-  .imagem-responsiva {
-    width: 100%;
-  }
 </style>
