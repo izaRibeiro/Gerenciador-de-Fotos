@@ -1,16 +1,27 @@
 <template>
         
     <div class="painel">
-        <h4 class="painel-titulo"> {{ titulo }} </h4>
-        <slot class="painel-conteudo">
-        </slot>
+        <h4 class="painel-titulo" v-on:dblclick="visivel = !visivel"> {{ titulo }} </h4>
+        
+        <transition name="fechar-painel">
+            <div class="painel-conteudo" v-show="visivel">
+                <slot></slot>
+            </div>
+        </transition>
+
     </div>
 
 </template>
 
 <script>
 export default {
-    props: ['titulo']
+    props: ['titulo'],
+
+    data() {
+        return {
+            visivel: true
+        }
+    }
 }
 </script>
 
@@ -35,7 +46,12 @@ export default {
     margin-bottom: 0px;
   }
 
-  .imagem-responsiva {
-    width: 100%;
-  }
+    .fechar-painel-enter, .fechar-painel-leave-active {
+        opacity: 0
+    }
+
+    .fechar-painel-enter-active, .fechar-painel-leave-active {
+        transition: opacity .4s
+    }
+
 </style>

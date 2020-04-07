@@ -9,7 +9,7 @@
         v-for='foto of fotosComFiltro' :key='foto.titulo'>
         
         <meu-painel :titulo='foto.titulo'>
-          <img class='imagem-responsiva' :src='foto.url' :alt='foto.titulo'>
+            <minha-imagem-responsiva :url="foto.url" :titulo="foto.titulo"></minha-imagem-responsiva>
         </meu-painel>
         
       </li>
@@ -20,16 +20,18 @@
 
 <script>
 import Painel from '../src/components/shared/Painel';
+import Imagem from '../src/components/shared/imagem-responsiva/ImagemResponsiva';
 
 export default {
 
   components: {
-    'meu-painel': Painel
+    'meu-painel': Painel,
+    'minha-imagem-responsiva': Imagem
   },
 
   data(){
     return{
-      titulo: 'Alurapic',
+      titulo: 'My Photos',
       fotos: [],
       filtro: ''
     }
