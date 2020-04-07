@@ -10,6 +10,8 @@
         
         <meu-painel :titulo='foto.titulo'>
             <minha-imagem-responsiva :url="foto.url" :titulo="foto.titulo"></minha-imagem-responsiva>
+
+            <meu-botao tipo="button" texto="Remover" @click.native="remover(foto)"/>
         </meu-painel>
         
       </li>
@@ -21,12 +23,14 @@
 <script>
 import Painel from '../shared/Painel';
 import Imagem from '../shared/imagem-responsiva/ImagemResponsiva';
+import Botao from '../shared/botao/Botao';
 
 export default {
 
   components: {
     'meu-painel': Painel,
-    'minha-imagem-responsiva': Imagem
+    'minha-imagem-responsiva': Imagem,
+    'meu-botao': Botao
   },
 
   data(){
@@ -59,13 +63,21 @@ export default {
         fotos => this.fotos = fotos,
         err => console.log(err));
     });
+  },
+
+  methods: {
+      remover(foto){
+
+          if(confirm('Tem certeza que deseja remover a imagem?')){
+            alert('Removendo foto ' + foto.titulo);
+          }
+          
+      }
   }
 }
 </script>
 
 <style>
-
-
 
   .titulo {
     text-align: center;
@@ -80,8 +92,10 @@ export default {
   }
 
   .filtro {
-    display: block;
-    width: 80%; 
+    display: flex;
+    width: 80%;
+    position: relative; 
+    align-self: center;
     padding: 12px 20px;
     margin: 8px 0;
     border: 1px solid #ccc;
@@ -89,4 +103,11 @@ export default {
     box-sizing: border-box;
     cursor: pointer;
   }
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+  }
+
 </style>
