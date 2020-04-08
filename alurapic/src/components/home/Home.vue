@@ -11,7 +11,9 @@
         <meu-painel :titulo='foto.titulo'>
             <minha-imagem-responsiva :url="foto.url" :titulo="foto.titulo"></minha-imagem-responsiva>
 
-            <meu-botao tipo="button" texto="Remover" @click.native="remover(foto)"/>
+            <meu-botao tipo="button" texto="Remover" 
+            @botaoAtivado="remover(foto)" v-bind:confirmacao="true"
+            estilo="perigo"/>
         </meu-painel>
         
       </li>
@@ -67,11 +69,7 @@ export default {
 
   methods: {
       remover(foto){
-
-          if(confirm('Tem certeza que deseja remover a imagem?')){
-            alert('Removendo foto ' + foto.titulo);
-          }
-          
+        alert('Removendo foto ' + foto.titulo);
       }
   }
 }

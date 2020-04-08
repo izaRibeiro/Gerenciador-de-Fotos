@@ -1,11 +1,34 @@
 <template>
-    <button class="botao botao-perigo" :type="tipo"> {{ texto }} </button>
+    <button :class="estiloBotao" :type="tipo"
+    @click="disparaAcao()"
+    > {{ texto }} </button>
 </template>
 
 <script>
 
     export default {
-        props: ['tipo', 'texto']
+        props: ['tipo', 'texto','confirmacao', 'estilo'],
+
+        methods: {
+            disparaAcao(){
+                if(this.confirmacao){
+                    if(confirm('Tem certeza que deseja remover a imagem?')){
+                        this.$emit('botaoAtivado');
+                    }
+                    return null;
+                }
+
+                this.$emit('botaoAtivado');
+            }
+        },
+
+        computed: {
+            estiloBotao(){
+                if(this.estilo == 'padrao') return 'botao botao-padrao';
+                if(this.estilo == 'perigo') return 'botao botao-perigo';
+                return 'botao botao-padrao';
+            }
+        }
     }
 
 </script>
