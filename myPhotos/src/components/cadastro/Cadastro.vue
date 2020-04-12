@@ -58,6 +58,8 @@ export default {
       gravar(){
         console.log(this.foto);
 
+        this.$http.post('http://localhost:3000/v1/fotos', this.foto);
+
         this.foto = new Foto();
       }
   }
