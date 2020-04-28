@@ -39,6 +39,7 @@
 import ImagemResponsiva from '../shared/imagem-responsiva/ImagemResponsiva.vue'
 import Botao from '../shared/botao/Botao.vue';
 import Foto from '../../model/foto/Foto';
+import FotoService from '../../service/fotoService';
 
 export default {
 
@@ -56,9 +57,13 @@ export default {
 
   methods: {
       gravar(){
-        console.log(this.foto);
+        
+        this.service = new FotoService(this.$resource);
 
-        this.$http.post('http://localhost:3000/v1/fotos', this.foto);
+        this.service.cadastrar(this.foto)
+        .then(() => {
+          this.foto = new Foto()
+        }, err => console.log(err));
 
         this.foto = new Foto();
       }

@@ -27,6 +27,7 @@
 import Painel from '../shared/Painel';
 import Imagem from '../shared/imagem-responsiva/ImagemResponsiva';
 import Botao from '../shared/botao/Botao';
+import FotoService from '../../service/fotoService';
 
 export default {
 
@@ -60,18 +61,17 @@ export default {
   },
 
   created() {
-    let promise = this.$http.get('http://localhost:3000/v1/fotos');
+    this.service = new FotoService(this.$resource);
 
-    promise.then(res => {
-      res.json().then(
-        fotos => this.fotos = fotos,
-        err => console.log(err));
-    });
+    this.service.listar()
+    .then(fotos => this.fotos = fotos,
+      err => console.log(err));
   },
 
   methods: {
       remover(foto){
-        this.$http.delete(`http://localhost:3000/v1/fotos/${foto._id}`)
+
+        this.service.deletar(foto._id)
         .then(() => {
           let indice = this.fotos.indexOf(foto);
           this.fotos.splice(indice, 1);
