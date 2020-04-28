@@ -2,6 +2,7 @@
   <div>
     <h1 class='titulo'> {{ titulo }}</h1>
 
+    <p v-show="mensagem" class="centralizado">{{ mensagem }}</p>
     <input type='search' class='filtro' v-on:input='filtro = $event.target.value' placeholder='Pesquisar'>
     
     <ul class='lista-fotos'>
@@ -39,7 +40,8 @@ export default {
     return{
       titulo: 'My Photos',
       fotos: [],
-      filtro: ''
+      filtro: '',
+      mensagem: ''
     }
   },
 
@@ -69,7 +71,17 @@ export default {
 
   methods: {
       remover(foto){
-        alert('Removendo foto ' + foto.titulo);
+        this.$http.delete(`http://localhost:3000/v1/fotos/${foto._id}`)
+        .then(() => {
+          let indice = this.fotos.indexOf(foto);
+          this.fotos.splice(indice, 1);
+          this.mensagem = 'Imagem removida com sucesso';
+        },
+        err => {
+          console.log(err);
+          this.mensagem = "Não foi possível remover a imagem"
+        }
+        );
       }
   }
 }

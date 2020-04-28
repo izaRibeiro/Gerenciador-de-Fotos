@@ -14,12 +14,14 @@
                 if(this.confirmacao){
                     if(confirm('Tem certeza que deseja remover a imagem?')){
                         this.$emit('botaoAtivado');
+
                     }
                     return null;
                 }
 
                 this.$emit('botaoAtivado');
-            }
+            },
+
         },
 
         computed: {
