@@ -40,7 +40,7 @@ export default {
   .painel .painel-titulo {
     text-align: center;
     color: rgb(248, 239, 239);
-    background: rgb(190, 72, 159);
+    background-color: #2d0000;
     margin: 0 0 15px 0;
     padding: 10px;
     margin-bottom: 0px;

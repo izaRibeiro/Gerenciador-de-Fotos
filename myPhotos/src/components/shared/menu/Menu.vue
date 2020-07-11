@@ -34,7 +34,7 @@
     .nav {
         width: 100%;
         margin-top: 0px;
-        background-color: rgb(190, 72, 159);
+        background-color: #2d0000;
     }
 
     .caminhos {
@@ -45,6 +45,7 @@
     }
 
     .logo{
+        color: white;
         position: relative;
         display: inline-block;
         left: 15%;
