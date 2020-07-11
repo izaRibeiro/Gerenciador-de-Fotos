@@ -1,10 +1,15 @@
 <template>
   <div>
-    <h1 class='titulo'> {{ titulo }}</h1>
+    <div class="search">
+      <div>
+        <h1 class='titulo'> {{ titulo }}</h1>
+        <break></break>
+        <p v-show="mensagem" class="centralizado">{{ mensagem }}</p>
+        <input type='search' class='filtro' v-on:input='filtro = $event.target.value' placeholder='Pesquisar'>
+      </div>
+    </div>
 
-    <p v-show="mensagem" class="centralizado">{{ mensagem }}</p>
-    <input type='search' class='filtro' v-on:input='filtro = $event.target.value' placeholder='Pesquisar'>
-    
+  <div>
     <ul class='lista-fotos'>
       <li class='lista-fotos-item'
         v-for='foto of fotosComFiltro' :key='foto.titulo'>
@@ -19,7 +24,7 @@
         
       </li>
     </ul>
-    
+  </div>
   </div>
 </template>
 
@@ -88,14 +93,41 @@ export default {
 </script>
 
 <style>
-
+  .corpo{
+    height: 12%;
+    bottom: 10px;
+    width: 178px;
+    left: calc(50% - 75px);
+  }
+ 
   .titulo {
-    text-align: center;
+    margin: 0;
+    margin-bottom: 10px;
+  }
+
+  break{
+    flex-basis: 100%;
+  }
+
+  .search{
+    background-color: #810c55;
+    height: 400px;
+  }
+
+  .search div{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    position: absolute;
+    top: 20%;
+    width: 100%;
   }
 
   .lista-fotos {
     list-style: none;
-    margin-left: 100px;
+    margin: 10%;
+    margin-bottom: 0;
+    margin-top: 80px;
   }
 
   .lista-fotos .lista-fotos-item {
@@ -105,17 +137,16 @@ export default {
 
   .filtro {
     display: flex;
-    width: 80%;
+    width: 70%;
     position: relative; 
-    align-self: center;
     padding: 12px 20px;
-    margin: 20px;
-    margin-left: 100px;
+    margin-bottom: 0;
     border: 1px solid #ccc;
     border-radius: 4px;
     box-sizing: border-box;
     cursor: pointer;
   }
+
   ul {
     list-style-type: none;
     margin: 0;
