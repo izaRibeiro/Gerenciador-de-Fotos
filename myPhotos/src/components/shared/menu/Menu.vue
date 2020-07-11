@@ -1,10 +1,12 @@
 <template>
     <nav class="nav">
       <ul>       
+          <li class="logo">
+            My Photos
+          </li>
           <li class="caminhos" v-for="route in routes" :key="route.titulo" >
             <router-link class="rota" :to="route.path ? route.path : '/'">{{route.titulo}}</router-link>
           </li>
-
       </ul>
 
     </nav>
@@ -36,10 +38,17 @@
     }
 
     .caminhos {
+        position: relative; 
         display: inline-block;
+        left: 75%;
         margin: 10px;
     }
 
+    .logo{
+        position: relative;
+        display: inline-block;
+        left: 15%;
+    }
     .rota {
         text-decoration:none;
         color: rgb(248, 239, 239);

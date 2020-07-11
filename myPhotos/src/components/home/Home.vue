@@ -103,6 +103,7 @@ export default {
   .titulo {
     margin: 0;
     margin-bottom: 10px;
+    color: white;
   }
 
   break{
@@ -110,7 +111,9 @@ export default {
   }
 
   .search{
-    background-color: #810c55;
+    /* background-color: #810c55; */
+    background-image: url(../../assets/flamingo.jpg);
+    background-size: 100%;
     height: 400px;
   }
 
