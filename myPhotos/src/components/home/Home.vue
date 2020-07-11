@@ -118,8 +118,8 @@ export default {
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
-    position: absolute;
-    top: 20%;
+    position: relative;
+    top: 50%;
     width: 100%;
   }
 
