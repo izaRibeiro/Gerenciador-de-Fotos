@@ -1,4 +1,4 @@
-# alurapic
+# myPhotos
 
 ## Project setup
 ```

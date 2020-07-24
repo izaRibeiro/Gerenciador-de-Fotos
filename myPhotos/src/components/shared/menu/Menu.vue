@@ -2,7 +2,7 @@
     <nav class="nav">
       <ul>       
           <li class="logo">
-            My Photos
+            <b>My Photos</b>
           </li>
           <li class="caminhos" v-for="route in routes" :key="route.titulo" >
             <router-link class="rota" :to="route.path ? route.path : '/'">{{route.titulo}}</router-link>

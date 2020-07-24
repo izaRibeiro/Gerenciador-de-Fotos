@@ -40,6 +40,7 @@
         display: inline-block;
         padding: 10px;
         border-radius: 50px;
+        border-color: black;
         margin: 5px;
         font-size: 15px;
         border: 1px solid #ccc;

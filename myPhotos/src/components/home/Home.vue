@@ -94,10 +94,8 @@ export default {
 
 <style>
   .corpo{
-    height: 12%;
+    height:100%;
     bottom: 10px;
-    width: 178px;
-    left: calc(50% - 75px);
   }
  
   .titulo {
@@ -111,7 +109,6 @@ export default {
   }
 
   .search{
-    /* background-color: #810c55; */
     background-image: url(../../assets/flamingo.jpg);
     background-size: 100%;
     height: 400px;
@@ -135,7 +132,7 @@ export default {
 
   .lista-fotos .lista-fotos-item {
     display: inline-block;
-    margin-left: 10px;
+    margin-inline: 20px;
   }
 
   .filtro {

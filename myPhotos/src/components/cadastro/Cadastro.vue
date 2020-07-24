@@ -72,6 +72,9 @@ export default {
 
 </script>
 <style scoped>
+  body{
+    height:100%;
+  }
 
   .centralizado {
     text-align: center;
