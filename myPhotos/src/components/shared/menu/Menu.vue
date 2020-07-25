@@ -34,7 +34,7 @@
     .nav {
         width: 100%;
         margin-top: 0px;
-        background-color: #2d0000;
+        background-color: #FBF2F2;
     }
 
     .caminhos {
@@ -45,13 +45,13 @@
     }
 
     .logo{
-        color: white;
+        color: black;
         position: relative;
         display: inline-block;
         left: 15%;
     }
     .rota {
         text-decoration:none;
-        color: rgb(248, 239, 239);
+        color: black;
     }
 </style>

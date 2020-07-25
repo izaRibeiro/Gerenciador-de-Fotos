@@ -17,6 +17,8 @@
         <meu-painel :titulo='foto.titulo'>
             <minha-imagem-responsiva :url="foto.url" :titulo="foto.titulo"></minha-imagem-responsiva>
 
+            <h4 class="painel-titulo" v-on:dblclick="visivel = !visivel"> {{ titulo }} </h4>
+
             <meu-botao tipo="button" texto="Remover" 
             @botaoAtivado="remover(foto)" v-bind:confirmacao="true"
             estilo="perigo"/>
@@ -145,6 +147,15 @@ export default {
     border-radius: 4px;
     box-sizing: border-box;
     cursor: pointer;
+  }
+
+  .painel-titulo {
+    text-align: center;
+    font-weight: normal;
+    color: #FFFFFF;
+    background-image: linear-gradient(to right, #1FB3C7 , #3B9A9A);
+    margin: 0 0 15px 0;
+    margin-bottom: 0px;
   }
 
   ul {

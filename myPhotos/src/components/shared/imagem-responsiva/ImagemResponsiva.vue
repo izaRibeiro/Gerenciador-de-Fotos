@@ -14,6 +14,8 @@
 
   .imagem-responsiva {
     width: 100%;
+    border-top-left-radius: 5%;
+    border-top-right-radius: 5%;
   }
   
 </style>

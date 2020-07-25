@@ -39,16 +39,14 @@
     .botao {
         display: inline-block;
         padding: 10px;
-        border-radius: 50px;
-        border-color: black;
         margin: 5px;
         font-size: 15px;
-        border: 1px solid #ccc;
-        color: rgb(248, 239, 239);
+        border: none;
+        border-radius: 5%; 
     }
 
     .botao-perigo {
-        background: rgb(158, 28, 28);
+        background: #FF6969;
     }
 
     .botao-padrao {
