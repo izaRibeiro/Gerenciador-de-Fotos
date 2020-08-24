@@ -1,7 +1,8 @@
 <template>
 
   <div>
-    <h1 class="centralizado">Cadastro</h1>
+    <img src="../../assets/flamingoCadastro.jpg" class="flamingo">
+    <h1 class="centralizado cadastro-titulo">Cadastro</h1>
     <h2 class="centralizado"></h2>
 
     <form @submit.prevent="gravar()">
@@ -27,10 +28,11 @@
 
       <div class="centralizado">
         <meu-botao texto="Salvar" tipo="submit"/>
-        <router-link to="/"><meu-botao texto="Voltar" tipo="button"/></router-link>
+        <router-link to="/"><meu-botao texto="Voltar" tipo="button" estilo="neutro"/></router-link>
       </div>
 
     </form>
+
   </div>
 </template>
 
@@ -41,10 +43,10 @@ import Botao from '../shared/botao/Botao.vue';
 import Foto from '../../model/foto/Foto';
 import FotoService from '../../service/fotoService';
 
+
 export default {
 
   components: {
-
     'imagem-responsiva': ImagemResponsiva, 
     'meu-botao': Botao
   },
@@ -92,7 +94,7 @@ export default {
 
  .controle label + input, .controle textarea {
     display: flex;
-    width: 80%;
+    width: 35%;
     position: relative; 
     align-self: center;
     padding: 12px 20px;
@@ -106,6 +108,13 @@ export default {
 
   .centralizado {
     text-align: center;
+  }
+
+  .flamingo {
+    width: 50%;
+    height: 20%;
+    float: right;
+    margin-top: -20px;
   }
 
 </style>

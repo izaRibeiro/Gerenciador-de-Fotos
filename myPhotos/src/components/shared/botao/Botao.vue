@@ -28,6 +28,7 @@
             estiloBotao(){
                 if(this.estilo == 'padrao') return 'botao botao-padrao';
                 if(this.estilo == 'perigo') return 'botao botao-perigo';
+                if(this.estilo == 'neutro') return 'botao botao-neutro';
                 return 'botao botao-padrao';
             }
         }
@@ -50,6 +51,10 @@
     }
 
     .botao-padrao {
-        background: darkcyan;
+        background: #37E8B3;
+    }
+
+    .botao-neutro {
+        background: #FF9B52;
     }
 </style>

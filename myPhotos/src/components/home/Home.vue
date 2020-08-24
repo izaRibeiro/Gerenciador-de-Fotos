@@ -26,6 +26,8 @@
         
       </li>
     </ul>
+
+
   </div>
   </div>
 </template>
@@ -64,7 +66,6 @@ export default {
         return this.fotos;
       }
     }
-
   },
 
   created() {
