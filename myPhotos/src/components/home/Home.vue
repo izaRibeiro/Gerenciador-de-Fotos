@@ -14,10 +14,10 @@
       <li class='lista-fotos-item'
         v-for='foto of fotosComFiltro' :key='foto.titulo'>
         
-        <meu-painel :titulo='foto.titulo'>
+        <meu-painel :titulo="foto.titulo">
             <minha-imagem-responsiva :url="foto.url" :titulo="foto.titulo"></minha-imagem-responsiva>
 
-            <h4 class="painel-titulo" v-on:dblclick="visivel = !visivel"> {{ titulo }} </h4>
+            <h4 class="painel-titulo"> {{ foto.titulo }} </h4>
 
             <meu-botao tipo="button" texto="Remover" 
             @botaoAtivado="remover(foto)" v-bind:confirmacao="true"
@@ -48,7 +48,7 @@ export default {
 
   data(){
     return{
-      titulo: 'My Photos',
+      titulo: 'My Photo',
       fotos: [],
       filtro: '',
       mensagem: ''

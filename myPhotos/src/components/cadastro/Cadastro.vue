@@ -16,7 +16,7 @@
         <label for="url">Url</label>
         <input id="url" autocomplete="off" 
         v-model.lazy="foto.url">
-        <imagem-responsiva v-show="foto.url" :url="foto.url" :titulo="foto.titulo"/>
+        <imagem-responsiva v-show="foto.url" :url="foto.url" :titulo="foto.titulo" class="imagem-cadastrada"/>
       </div>
 
       <div class="controle">
@@ -115,6 +115,12 @@ export default {
     height: 20%;
     float: right;
     margin-top: -20px;
+  }
+
+  .imagem-cadastrada {
+    max-width: 30%;
+    max-height: 30%;
+    margin-left: 10%;
   }
 
 </style>
