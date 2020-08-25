@@ -4,7 +4,6 @@
       <div>
         <h1 class='titulo'> {{ titulo }}</h1>
         <break></break>
-        <p v-show="mensagem" class="centralizado">{{ mensagem }}</p>
         <input type='search' class='filtro' v-on:input='filtro = $event.target.value' placeholder='Pesquisar'>
       </div>
     </div>
