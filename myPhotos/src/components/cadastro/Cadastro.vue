@@ -108,6 +108,7 @@ export default {
     align-self: center;
     padding: 12px 20px;
     margin: 20px;
+    margin-top: 10px;
     margin-left: 100px;
     border: 1px solid #ccc;
     border-radius: 4px;
@@ -131,5 +132,4 @@ export default {
     max-height: 30%;
     margin-left: 10%;
   }
-
 </style>

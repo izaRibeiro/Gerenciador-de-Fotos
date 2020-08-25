@@ -14,10 +14,10 @@
       <li class='lista-fotos-item'
         v-for='foto of fotosComFiltro' :key='foto.titulo'>
         
-        <meu-painel :titulo="foto.titulo">
+        <meu-painel :titulo="foto.titulo" :foto="foto">
             <minha-imagem-responsiva class="imagem" :url="foto.url" :titulo="foto.titulo" ></minha-imagem-responsiva>
 
-            <h4 class="painel-titulo"> {{ foto.titulo }} </h4>
+            <h4 class="painel-titulo" > {{ foto.titulo }} </h4>
 
             <meu-botao tipo="button" texto="Remover" 
             @botaoAtivado="remover(foto)" v-bind:confirmacao="true"
@@ -161,6 +161,10 @@ export default {
     background-image: linear-gradient(to right, #1FB3C7 , #3B9A9A);
     margin: 0 0 15px 0;
     margin-bottom: 0px;
+  }
+
+  .imagem-modal{
+    border-radius: 10px;
   }
 
   ul {
