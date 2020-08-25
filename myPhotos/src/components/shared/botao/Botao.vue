@@ -1,7 +1,11 @@
 <template>
-    <button :class="estiloBotao" :type="tipo"
-    @click="disparaAcao()"
-    > {{ texto }} </button>
+    <div>
+        <button :class="estiloBotao" :type="tipo"
+        @click="disparaAcao()"
+        > {{ texto }} </button>
+
+        <v-dialog />
+    </div>
 </template>
 
 <script>
@@ -12,15 +16,34 @@
         methods: {
             disparaAcao(){
                 if(this.confirmacao){
-                    if(confirm('Tem certeza que deseja remover a imagem?')){
-                        this.$emit('botaoAtivado');
-
-                    }
-                    return null;
+                    this.$modal.show('dialog', {
+                            title: 'Tem certeza que deseja remover essa imagem?',
+                            text: 'Essa ação não pode ser desfeita.',
+                            buttons: [
+                            {
+                                title: 'Fechar',
+                                handler: () => {
+                                    this.$modal.hide('dialog')
+                                }
+                            },
+                            {
+                                title: 'Remover',
+                                handler: () => {
+                                    this.remover();
+                                }
+                            }
+                        ]
+                    });
+                   return null;   
                 }
 
                 this.$emit('botaoAtivado');
             },
+
+            remover(){
+                this.$emit('botaoAtivado');
+                this.$modal.hide('dialog');
+            }
 
         },
 
@@ -44,6 +67,7 @@
         font-size: 15px;
         border: none;
         border-radius: 5%; 
+        cursor: pointer;
     }
 
     .botao-perigo {

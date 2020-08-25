@@ -26,7 +26,7 @@
         </textarea>
       </div>
 
-      <div class="centralizado">
+      <div class="centralizado botoes">
         <meu-botao texto="Salvar" tipo="submit"/>
         <router-link to="/"><meu-botao texto="Voltar" tipo="button" estilo="neutro"/></router-link>
       </div>
@@ -65,6 +65,11 @@ export default {
         this.service.cadastrar(this.foto)
         .then(() => {
           this.foto = new Foto()
+          this.$toast.open({
+            message: 'Imagem cadastrada com sucesso!',
+            type: 'success',
+            position: 'top-right',
+          });
         }, err => console.log(err));
 
         this.foto = new Foto();
@@ -80,6 +85,10 @@ export default {
 
   .centralizado {
     text-align: center;
+  }
+  .botoes{
+    display: inline-flex;
+    margin-left: 20%;
   }
   .controle {
     font-size: 1.2em;

@@ -15,7 +15,7 @@
         v-for='foto of fotosComFiltro' :key='foto.titulo'>
         
         <meu-painel :titulo="foto.titulo">
-            <minha-imagem-responsiva :url="foto.url" :titulo="foto.titulo"></minha-imagem-responsiva>
+            <minha-imagem-responsiva class="imagem" :url="foto.url" :titulo="foto.titulo" ></minha-imagem-responsiva>
 
             <h4 class="painel-titulo"> {{ foto.titulo }} </h4>
 
@@ -48,7 +48,7 @@ export default {
 
   data(){
     return{
-      titulo: 'My Photo',
+      titulo: 'My Photos',
       fotos: [],
       filtro: '',
       mensagem: ''
@@ -78,12 +78,16 @@ export default {
 
   methods: {
       remover(foto){
-
         this.service.deletar(foto._id)
         .then(() => {
           let indice = this.fotos.indexOf(foto);
           this.fotos.splice(indice, 1);
           this.mensagem = 'Imagem removida com sucesso';
+          this.$toast.open({
+            message: this.mensagem,
+            type: 'success',
+            position: 'top-right',
+          });
         },
         err => {
           console.log(err);
@@ -91,7 +95,7 @@ export default {
         }
         );
       }
-  }
+    }
 }
 </script>
 
